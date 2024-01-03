@@ -50,6 +50,7 @@ VOC/
 # Neural Network weights -----------------------------------------------------------------------------------------------
 *.weights
 *.pt
+!yolov5-master/models/best.pt
 *.pb
 *.onnx
 *.engine
