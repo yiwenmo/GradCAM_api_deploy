@@ -24,4 +24,19 @@ ARG FORCE_CUDA=1
 WORKDIR /workspace/yolov5
 ENV HOME=/workspace/yolov5
 
-COPY src/static /workspace/Mask2Former/static
+RUN mkdir -p /workspace/yolov5/output
+
+# data and model
+COPY src/img /workspace/yolov5/data/images/img
+COPY src/best.pt /workspace/yolov5/models/best.pt
+COPY src/yolov5s_arcade.yaml /workspace/yolov5/models/yolov5s_arcade.yaml
+
+# script
+COPY src/gradcam_mo.py /workspace/yolov5/gradcam_mo.py
+COPY src/app.py /workspace/yolov5/app.py
+COPY src/config.py /workspace/yolov5/config.py
+COPY src/templates /workspace/yolov5/templates
+COPY src/static /workspace/yolov5/static
+
+# EXPOSE 5000
+# CMD ["python", "app.py"]
