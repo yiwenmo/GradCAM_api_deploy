@@ -1,3 +1,4 @@
 # model
 src/best.pt
 src/yolov5s_arcade.yaml
+.DS_Store
