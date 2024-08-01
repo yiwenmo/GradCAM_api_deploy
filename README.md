@@ -13,14 +13,14 @@ The contents of this file can create an image and container at once:
 ```
 #!/bin/bash
 docker build -t <image_name:image_tag> <Dockerfile存放的dir>
-docker run -it --rm -p 5000:5000 --name <container_name> <image_name:image_tag>
+docker run -it --rm -p 3000:3000 --name <container_name> <image_name:image_tag>
 ```
 
 For example:
 ```
 #!/bin/bash
 docker build -t gradcam image
-docker run -it --rm -p 5000:5000 --name test_demo gradcam
+docker run -it --rm -p 3000:3000 --name demo gradcam
 ```
 
 ## Folder Structure
@@ -46,6 +46,6 @@ docker run -it --rm -p 5000:5000 --name test_demo gradcam
     - `config.py`: To simplify the `app.py` file, input and output folder paths and necessary functions are defined in `config.py`. Imported into `app.py` using `from config`.
     - img/:
         - test/:Used to test the updated Dockerfile and confirm proper functioning without Flask mode.
-    - gradcam_mo.py：Executes GradCAM code.
+    - `gradcam_mo.py`：Executes GradCAM code.
     - static/：Stores static data such as CSS, JavaScript files, etc.
     - templates/：HTML templates are stored in this folder.
