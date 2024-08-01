@@ -1,4 +1,4 @@
-# utils.py
+# config.py
 import base64
 import re
 from PIL import Image

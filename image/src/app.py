@@ -1,13 +1,12 @@
 # Flask
-from flask import Flask, redirect, url_for, request, render_template, Response, jsonify, redirect, send_from_directory, send_file
+from flask import Flask, request, render_template, jsonify
 from gevent.pywsgi import WSGIServer
 
 # Some utilites
 import os
 import base64
 import logging
-import json
-from config import UPLOAD_FOLDER, OUTPUT_FOLDER, base64_to_image
+from config import UPLOAD_FOLDER, base64_to_image
 from gradcam_mo import initialize_model
 
 # Declare a flask app

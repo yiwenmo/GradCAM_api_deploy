@@ -13,7 +13,7 @@ from utils.general import intersect_dicts
 from utils.augmentations import letterbox
 from utils.general import xywh2xyxy
 
-from pytorch_grad_cam import GradCAMPlusPlus, GradCAM, XGradCAM
+from pytorch_grad_cam import GradCAM, XGradCAM
 from pytorch_grad_cam.utils.image import show_cam_on_image
 from pytorch_grad_cam.activations_and_gradients import ActivationsAndGradients
 
