@@ -4,3 +4,6 @@ image/models/yolov5s_arcade.yaml
 *.yaml
 *.pt
 .DS_Store
+
+# deploy
+deploy/deploy.sh
