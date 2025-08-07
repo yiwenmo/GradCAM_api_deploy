@@ -27,6 +27,9 @@ docker run -it --rm -p 3000:3000 --name demo gradcam
 ![filestructure](img/construction.png)
 
 ## Data Explanation
+
+
+
 - build.sh：Run bash `build.sh` to easily create both image and container.
 
 - .gitignore : Ignore the contents of this file when uploading to Git.
@@ -36,7 +39,8 @@ docker run -it --rm -p 3000:3000 --name demo gradcam
 - Dockerfile：Builds the Docker image, including the basic Python environment, necessary file copies, and package installations.
 
 
-- models/:
+- models/ : 
+To protect model privacy, **the following files are excluded** from this public repository and are listed in `.gitignore`
     - yolov5s_arcade.yaml: YOLOv5 arcade model architecture file.
     - best.pt：Pre-trained weights file for the YOLOv5 model.
 
@@ -49,3 +53,6 @@ docker run -it --rm -p 3000:3000 --name demo gradcam
     - `gradcam_mo.py`：Executes GradCAM code.
     - static/：Stores static data such as CSS, JavaScript files, etc.
     - templates/：HTML templates are stored in this folder.
+
+This repository provides all the source code required to build the Docker container and run the GradCAM web service.
+**It is recommended to build the image on a Windows system for compatibility reasons.**
