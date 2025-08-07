@@ -2,13 +2,10 @@ FROM nvcr.io/nvidia/pytorch:22.09-py3
 
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y zip htop screen libgl1-mesa-glx && \
+    python -m pip install --upgrade pip setuptools wheel && \
     python -m pip install pyyaml 
 
-RUN pip install Flask gevent
-
-
-# install pytorch-grad-cam
-RUN pip install grad-cam
+RUN pip install Flask gevent grad-cam
 
 # install Yolov5
 RUN git clone https://github.com/ultralytics/yolov5.git && \
@@ -17,6 +14,10 @@ RUN git clone https://github.com/ultralytics/yolov5.git && \
     pip install -r requirements.txt && \
     pip install "opencv-python-headless<4.3"
 
+
+# debug 2025/8/7
+RUN pip uninstall -y backports && \
+    pip install backports.tarfile || true
 
 ENV CUDA_HOME='/usr/local/cuda'
 ARG FORCE_CUDA=1

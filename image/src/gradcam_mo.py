@@ -35,7 +35,7 @@ class yolov5_heatmap:
         # self.target_layers = layers
         method = eval(method)
 
-        colors = np.random.uniform(0, 255, size=(len(model_names), 3)).astype(np.int)
+        colors = np.random.uniform(0, 255, size=(len(model_names), 3)).astype(int)
         self.__dict__.update(locals())
 
     def post_process(self, result):
