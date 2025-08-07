@@ -1,4 +1,4 @@
 # model
-src/best.pt
-src/yolov5s_arcade.yaml
+image/models/best.pt
+image/models/yolov5s_arcade.yaml
 .DS_Store
